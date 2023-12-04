@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chinese-Hakka Dictionary</title>
+</head>
+<body>
+    <h1>木●韻客服</h1>
+    <input type="text" id="query" placeholder="輸入問題">
+    <button onclick="search()">查詢</button>
+    <p id="result"></p>
+
+    <script>
+        function search() {
+            var query = document.getElementById('query').value;
+            var url = 'https://script.google.com/macros/s/AKfycbwzgK74I-xL-hyAotEBxkaGcCUlSkjSDCsN0r0SXYbyjjhW37d-xKG1sH6x1t4UQQR3/exec?q=' + encodeURIComponent(query);
+
+            fetch(url)
+                .then(response => response.text())
+                .then(text => document.getElementById('result').innerText = text)
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>
