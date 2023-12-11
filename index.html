@@ -1,20 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Chinese-Hakka Dictionary</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>木·韻客服系統</title>
+    <link href="css/styles.css" rel="stylesheet" />
 </head>
 <body>
-    <h1>木·韻客服</h1>
-    <input type="text" id="query" placeholder="輸入問題">
-    <button onclick="search()">查詢</button>
-    <p>範例:如何註冊帳號?</p>
-    <p id="result"></p>
-
+    <section class="page-section" id="contact">
+        <div class="container px-4 px-lg-5" >
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-8 col-xl-6 text-center">
+                    <h1 class="mt-0">木·韻客服系統</h2>
+                    <hr class="divider" />
+                    <p class="text-muted mb-4">請輸入您想詢問的問題 範例:如何註冊帳號?</p>
+                </div>
+            </div>
+            <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
+                <div class="col-lg-6">
+                    <form id="contactForm">
+                        <!-- Query input-->
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="query" type="text" placeholder="輸入問題">
+                            <label for="query">您的問題</label>
+                            <p id="result" class="mb-3 mt-2" style="padding-left: 5px;"></p>
+                        </div>
+                        <!-- Submit Button-->
+                        <div class="d-grid"><button type="button" class="btn btn-primary btn-xl" onclick="search()">查詢</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
     <script>
         function search() {
             var query = document.getElementById('query').value;
             var url = 'https://script.google.com/macros/s/AKfycbzAI3qKu6zy4hYOykA31MxZvdOmXVJshRfUTQGyoD5Tmh-Uun9NEM8zUTlkKF9YrfJk/exec?q=' + encodeURIComponent(query);
-
+            console.log('OK')
             fetch(url)
                 .then(response => response.text())
                 .then(text => document.getElementById('result').innerText = text)
