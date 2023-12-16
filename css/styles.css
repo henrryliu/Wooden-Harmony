@@ -9507,6 +9507,10 @@ textarea.form-control-lg {
     margin-right: 3rem !important;
     margin-left: 3rem !important;
   }
+  .mx-lg-6 {
+    margin-right: 10rem !important;
+    margin-left: 13rem !important;
+  }
   .mx-lg-auto {
     margin-right: auto !important;
     margin-left: auto !important;
@@ -10838,7 +10842,7 @@ body {
 }
 
 .page-section {
-  padding: 8rem 0;
+  padding: 4rem 0;
 }
 
 .text-white-75 {
